@@ -37,7 +37,21 @@ enum FactorialError: ErrorType {
 // And here is the function for you to implement:
 
 func saferFactorial(n: Int) throws -> Int   {
-    return 1
+    //var title = factorial(n)
+    //actorialError.Meaningless
+    var result = 1
+    if n == 0 {
+        return 1
+    }
+   
+    if n < 0 {
+        throw FactorialError.Meaningless
+    }
+    else if String(n).characters.count > 20 {
+        throw FactorialError.TooLarge
+    }
+    return result
+
 }
 
 /*:
